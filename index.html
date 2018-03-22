@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Place details</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>South of the River</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
-        $("button").click(function(){
-            $.ajax({
-              xhrFields: {
-                  withCredentials: false
-              },
-              crossDomain: true,
-                url: "https://ravarioana.github.io/web-project/message.txt", 
-                success: function(result){
-                    $("#div1").html(result);
-            }});
-        });
-    });
+      $.ajax({
+        xhrFields: {
+          withCredentials: false
+        },
+        crossDomain: true,
+          url: "https://ravarioana.github.io/web-project/message.txt", 
+          success: function(result){
+              $("#events-file").html(result);
+      }});
+});
     </script>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
   </head>
   <body>
-    <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
-    <div id="div2"><h2>This should be replaced with an image</h2></div>
+    <!-- Title section   -->
+    <div class="title-section">
+      <p>SOUTH OF THE RIVER</p>
+    </div>
+
+    <div class="button"><a href="page2.html">Next</a></div>
+  
+    <!--Crousel images -->  
+    <div class="container">
+      <h2>Views from this area</h2>
+      <div  id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
     
-    <button>Get External Content</button>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/london1.jpg" alt="Los Angeles" style="width:100%;">
+          </div>
+    
+          <div class="item">
+            <img src="img/london2.jpg" alt="Chicago" style="width:100%;">
+          </div>
+    
+          <div class="item">
+            <img src="img/london3.jpg" alt="New york" style="width:100%;">
+          </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="events">
+      <h2>Events on this week</h2>
+      <div id="events-file"></div>
+    </div>
   </body>
 </html>

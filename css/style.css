@@ -14,6 +14,9 @@
 /* Carousel section */
 .container {
     margin-left: 15px;
+    position: relative;
+    float: left;
+    width: 600px;
 }
 
 #myCarousel {
@@ -37,3 +40,18 @@
         width: 380px;
     }
 }
+
+
+/* Events */
+.events {
+    float: right;
+    margin-right: 200px;
+    
+    
+}
+
+/* Page 2 */
+
+#map {
+    height: 100%;
+  }
